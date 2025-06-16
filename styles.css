@@ -1,0 +1,421 @@
+/*
+---
+File: styles.css
+Project: Graber Website
+---
+*/
+
+/* -------------------- */
+/* --- ROOT & VARIABLES --- */
+/* -------------------- */
+
+:root {
+    --primary-dark: #001e28;
+    --primary-teal: #003d40;
+    --primary-yellow: #f9a825;
+    --primary-yellow-hover: #ffc107;
+    --text-light: #e0e6f0;
+    --text-muted: #8899a6;
+    --surface-color: #0a192f;
+    --border-color: rgba(136, 153, 166, 0.2);
+
+    --font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* -------------------- */
+/* --- GLOBAL STYLES & RESET --- */
+/* -------------------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px; /* Offset for sticky header */
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--primary-dark);
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h1, h2, h3 {
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+p {
+    color: var(--text-muted);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    color: var(--primary-yellow);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--primary-yellow-hover);
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-title h2 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.section-title p {
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* -------------------- */
+/* --- BUTTONS --- */
+/* -------------------- */
+
+.button-primary {
+    display: inline-block;
+    background-color: var(--primary-yellow);
+    color: #000;
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 14px 32px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.button-primary:hover {
+    background-color: var(--primary-yellow-hover);
+    color: #000;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* -------------------- */
+/* --- HEADER & NAVIGATION --- */
+/* -------------------- */
+
+#main-header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 15px 0;
+    background-color: rgba(0, 30, 40, 0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-color);
+}
+
+#main-header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: #fff;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: var(--text-light);
+    font-weight: 500;
+    font-size: 1rem;
+    position: relative;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--primary-yellow);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.nav-button {
+    padding: 10px 24px;
+}
+
+/* -------------------- */
+/* --- HERO SECTION --- */
+/* -------------------- */
+
+.hero-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, var(--primary-teal), var(--primary-dark));
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.hero-content p {
+    font-size: 1.25rem;
+    max-width: 700px;
+    margin: 0 auto 30px auto;
+}
+
+.hero-button {
+    font-size: 1.2rem;
+    padding: 18px 40px;
+}
+
+.version-info {
+    display: block;
+    margin-top: 15px;
+    color: var(--text-muted);
+}
+
+.hero-image {
+    margin-top: 60px;
+}
+
+.hero-image img {
+    border-radius: 12px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* -------------------- */
+/* --- FEATURES SECTION --- */
+/* -------------------- */
+
+.features-section {
+    padding: 100px 0;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.feature-card {
+    background-color: var(--surface-color);
+    padding: 40px;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--primary-yellow);
+}
+
+.feature-icon {
+    font-size: 3rem;
+    color: var(--primary-yellow);
+    margin-bottom: 20px;
+}
+
+.feature-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+/* -------------------- */
+/* --- GALLERY SECTION --- */
+/* -------------------- */
+
+.gallery-section {
+    padding: 100px 0;
+    background-color: var(--surface-color);
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.gallery-image {
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+}
+
+/* -------------------- */
+/* --- DOWNLOAD SECTION --- */
+/* -------------------- */
+
+.download-section {
+    padding: 100px 0;
+    text-align: center;
+    background: linear-gradient(135deg, var(--primary-dark), var(--primary-teal));
+}
+
+.download-content h2 {
+    font-size: 3rem;
+    color: #fff;
+}
+
+.download-content p {
+    font-size: 1.2rem;
+    margin: 10px 0 30px 0;
+}
+
+.download-button {
+    font-size: 1.25rem;
+    padding: 20px 50px;
+}
+
+.os-info {
+    display: block;
+    margin-top: 15px;
+    color: var(--text-muted);
+}
+
+/* -------------------- */
+/* --- FAQ SECTION --- */
+/* -------------------- */
+
+.faq-section {
+    padding: 100px 0;
+}
+
+.faq-list {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    border-bottom: 1px solid var(--border-color);
+}
+
+.faq-question {
+    width: 100%;
+    background: none;
+    border: none;
+    text-align: left;
+    padding: 25px 0;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text-light);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.faq-question::after {
+    content: '+';
+    font-size: 2rem;
+    color: var(--primary-yellow);
+    transition: transform 0.3s ease;
+}
+
+.faq-question.active::after {
+    transform: rotate(45deg);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out;
+}
+
+.faq-answer p {
+    padding: 0 0 25px 0;
+}
+
+/* -------------------- */
+/* --- FOOTER --- */
+/* -------------------- */
+
+#main-footer {
+    padding: 40px 0;
+    background-color: var(--surface-color);
+    border-top: 1px solid var(--border-color);
+}
+
+.footer-content {
+    text-align: center;
+}
+
+.footer-logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    margin: 0 15px;
+}
+
+.footer-copyright {
+    margin-top: 15px;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+/* -------------------- */
+/* --- RESPONSIVE DESIGN --- */
+/* -------------------- */
+
+@media (max-width: 992px) {
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    h1 { font-size: 3rem; }
+    .section-title h2 { font-size: 2.5rem; }
+    
+    .nav-links { display: none; } /* Simple hide for mobile, can be replaced with hamburger menu */
+    .features-grid { grid-template-columns: 1fr; }
+    .gallery-grid { grid-template-columns: 1fr; }
+    .hero-content { text-align: center; }
+}
+
